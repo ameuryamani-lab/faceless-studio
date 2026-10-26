@@ -5,7 +5,7 @@ découpent et vérifient des Shorts verticaux narrés (1080x1920, 60 s au plus, 
 image avec ComfyUI, Kokoro lit la narration, ffmpeg monte la vidéo, et le Short terminé peut se publier tout seul sur YouTube Shorts,
 Instagram Reels et TikTok via Upload-Post. Une « vitrine » 3D en direct vous montre l'équipe au travail.
 
-*English version: [README.md](README.md).*
+*English version: [README.md](README.md).* **Le guide (l'histoire du studio, ce que j'ai appris, comment démarrer) : [GUIDE.fr.md](GUIDE.fr.md).**
 
 ![La vitrine en mode démo : le chef sur l'estrade, le Brand Brain au centre, 7 équipes de 3 bureaux, les murs de la chaîne et des tendances](apercu-vitrine.png)
 

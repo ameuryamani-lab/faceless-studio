@@ -5,7 +5,7 @@ narrated vertical Shorts (1080x1920, up to 60 s, in English); your own GPU draws
 ffmpeg cuts the video, and the finished Short can publish itself to YouTube Shorts, Instagram Reels and TikTok through Upload-Post.
 A live 3D "vitrine" (showroom) lets you watch the team work.
 
-*Version française : [README.fr.md](README.fr.md).*
+*Version française : [README.fr.md](README.fr.md). The story behind the studio and what we learned (in French): [GUIDE.fr.md](GUIDE.fr.md).*
 
 ![The vitrine in demo mode: the chief on the dais, the Brand Brain in the middle, 7 teams of 3 desks, the channel and trending walls](apercu-vitrine.png)
 
