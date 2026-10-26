@@ -1,0 +1,101 @@
+{
+  "_about": "Thresholds of compare_to_reference (workshop/continuity.py, an optional tool no agent file lists). No hero is shipped: the palette below is a neutral placeholder, not anyone's character. The checks fit a mascot with a screen face and a ball on top; for your own hero, put its front reference at brand/references/hero-front.png, set the palette to your hero's colours and recalibrate (good frames pass, off-model frames fail). Tune here, never in code.",
+  "reference": "references/hero-front.png",
+  "work_size": 512,
+  "video_frames": 3,
+  "palette": {
+    "head": [
+      "#FFFFFF",
+      "#E0E0E0"
+    ],
+    "body": [
+      "#9E9E9E",
+      "#B0B0B0",
+      "#8A8A8A"
+    ],
+    "ball": "#C62828",
+    "screen": "#212121",
+    "eyes": [
+      "#90CAF9",
+      "#64B5F6"
+    ]
+  },
+  "screen": {
+    "max_L": 22,
+    "max_de_px": 22,
+    "min_a": 4,
+    "min_area_frac": 0.004,
+    "min_solidity": 0.5,
+    "second_screen_min": 0.3,
+    "second_screen_min_a": 10
+  },
+  "head": {
+    "bezel_min_L": 75,
+    "bezel_ratio_min": 1.05,
+    "bezel_ratio_max": 2,
+    "ref_ratio_w": 1.35,
+    "ref_ratio_h": 1.4
+  },
+  "ball": {
+    "min_chroma": 50,
+    "hue_min": 15,
+    "hue_max": 50,
+    "min_L": 25,
+    "max_L": 72,
+    "min_area_frac": 0.0003,
+    "size_vs_head": [
+      0.1,
+      0.4
+    ],
+    "position": {
+      "min_u": 0.6,
+      "max_v": 0.3
+    }
+  },
+  "eyes": {
+    "max_de_px": 30,
+    "min_area_frac": 0.004
+  },
+  "forbidden": {
+    "blue_min_chroma": 25,
+    "blue_min_L": 35,
+    "blue_max_frac": 0.003
+  },
+  "drift": {
+    "screen_max_de": 15,
+    "eyes_max_de": 20,
+    "ball_max_de": 20,
+    "head_max_de": 12,
+    "body_max_de": 20
+  },
+  "body": {
+    "search_below": 1,
+    "max_de_px": 25,
+    "min_frac_of_head": 0.12
+  },
+  "ears": {
+    "strip_w": 0.25,
+    "band_pad": 0.1,
+    "grey_L": [
+      45,
+      88
+    ],
+    "grey_max_chroma": 12,
+    "min_area_frac_head": 0.01,
+    "touch_max": 0.04,
+    "min_height_vs_head": 0.15,
+    "min_aspect_h_over_w": 0.8
+  },
+  "similarity": {
+    "pad_x": 0.2,
+    "pad_top": 0.15,
+    "below_head": 0.9,
+    "below_head_hidden_body": 0.05,
+    "edge_blur": 1.5,
+    "hist_min_chroma": 15,
+    "hist_blur": 0.7,
+    "w_hist": 0.6,
+    "w_edges": 0.4,
+    "min_score": 0.5
+  }
+}

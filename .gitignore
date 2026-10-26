@@ -1,0 +1,42 @@
+# Secrets : jamais dans l'historique
+.env
+.env.*
+!.env.example
+data/office-key.txt
+
+# Réglages propres à ce PC (copier config.example.json)
+config.local.json
+
+# Vidéos, images générées et modèles : trop lourds, régénérables
+media/
+node_modules/
+lora/
+
+# Base de données, journaux et relevés qui changent en continu
+data/studio.db
+data/studio.db*
+data/*.jsonl
+data/*.log
+data/daily/
+data/thumbs/
+data/claude-usage.json
+data/net-status.json
+data/approval-waiter.json
+data/paused.json
+data/production-paused.json
+logs/
+*.log
+
+# Copies de secours
+_backup-*/
+data/backup-*/
+
+# Cache Python des scripts
+__pycache__/
+
+# Prompts système composés par run-agent, un fichier par run, supprimé après
+data/prompts/
+
+# Planches candidates (concept/make-cast.mjs) et concepts d'essai : temporaires, la planche choisie est copiée sous son vrai nom
+concept/*/cast/*/_candidats/
+concept/_exemples/essai-*/

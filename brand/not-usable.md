@@ -1,0 +1,178 @@
+# Not usable for the show — trend flag list
+
+Read by `core/trends.mjs` at every trend scan (and by `node core/trends.mjs --reclassify`). Edit freely: one term per line under a heading, starting with `- `.
+A trend whose title or channel name matches any term below is stored with `usable = 0` and a `flag_reason`. Matching ignores case, accents and the spaces, dashes or dots inside a term (`mr beast` also catches `MrBeast`, `#mrbeast`, `Mr. Beast`).
+The show never imitates a real person, a brand mascot or an existing character (`brand/studio.md` §8), so these trends can inspire a format but never a remake.
+Agents `trend_scout` and `outlier_analyst` correct a wrong flag with `flag_trend` (it is logged). This list is conservative on purpose: when in doubt, the row is flagged `uncertain: check`.
+
+## People
+- Haaland
+- Yamal
+- Bellingham
+- Mbappe
+- Neymar
+- Ronaldo
+- Cristiano
+- Messi
+- Neymar
+- Mbappe
+- MrBeast
+- Mr Beast
+- Taylor Swift
+- Trump
+- Biden
+- Elon
+- Musk
+- Kardashian
+- Drake
+- Kanye
+- IShowSpeed
+- Kai Cenat
+- PewDiePie
+- Logan Paul
+- Jake Paul
+- Khaby
+- Beyonce
+- Rihanna
+- Obama
+
+## Brands
+- Roblox
+- PS5
+- PS4
+- PlayStation
+- Xbox
+- Nintendo
+- Skittle
+- Skittles
+- Coca-Cola
+- Pepsi
+- Nutella
+- Minecraft
+- Fortnite
+- McDonald's
+- McDonalds
+- iPhone
+- MacBook
+- AirPods
+- Samsung
+- Nike
+- Adidas
+- Coca Cola
+- Pepsi
+- Tesla
+- Lamborghini
+- Ferrari
+- Starbucks
+- KFC
+- Burger King
+- Lego
+- Barbie
+- Nintendo
+- PlayStation
+- Xbox
+- Among Us
+- Netflix
+- TikTok
+- Instagram
+- ChatGPT
+
+## Film, TV, game and character IP
+- American Dad
+- americandad
+- Chucky
+- Pennywise
+- Family Guy
+- Simpsons
+- SpongeBob
+- Marvel
+- DC
+- dcamu
+- Avengers
+- Spider-Man
+- Spiderman
+- Superman
+- Batman
+- Joker
+- Black Canary
+- Thanos
+- Hulk
+- Iron Man
+- Deadpool
+- Disney
+- Pixar
+- Pokemon
+- Pikachu
+- Frozen
+- Elsa
+- Skibidi
+- Gumball
+- Mario
+- Luigi
+- Sonic
+- Shrek
+- Minions
+- SpongeBob
+- Peppa
+- Bluey
+- Garfield
+- Tom and Jerry
+- Scooby
+- Simpsons
+- Family Guy
+- Rick and Morty
+- Naruto
+- Goku
+- Dragon Ball
+- One Piece
+- Hello Kitty
+- Sanrio
+- Poppy Playtime
+- Huggy Wuggy
+- Dandys World
+- Five Nights
+- FNAF
+- Sprunki
+- Incredibox
+- Labubu
+- Squid Game
+- Wednesday Addams
+- Harry Potter
+- Star Wars
+- Zelda
+- Kirby
+- Pac-Man
+
+## Dubbing and reuploads
+- dub
+- dubbed
+- fandub
+- fan dub
+- reupload
+- re-upload
+- compilation
+- reaction
+- reacts
+
+## Uncertain hints
+- shut up
+- aunty
+- auntie
+- karen
+- boomer
+- in-laws
+Regular expressions (between slashes, optionally followed by " · label") or terms. A match gives `uncertain: check` (someone else's series, a named creator, a parody or a known franchise word).
+- /\bep\.?\s?\d+\b/ · episode number
+- /\bepisode\b/ · episode
+- /\bpart\s?\d+\b/ · part number
+- /(^|[^\w@])@[\w.]{3,}/ · @creator mention
+- /\bft\.?\s/ · featuring
+- /\bfeat\.?\s/ · featuring
+- parody
+- trailer
+- movie
+- anime
+- fanart
+- fan art
+- cosplay
+- meme template

@@ -1,0 +1,8 @@
+{
+  "_help": "Copy this file to config.local.json and write the paths of YOUR computer. Leave out what is already on the PATH.",
+  "comfy_home": "C:\\Tools\\ComfyUI_windows_portable",
+  "kokoro_python": "C:\\Tools\\kokoro-venv\\Scripts\\python.exe",
+  "ffmpeg": "C:\\Tools\\ffmpeg\\ffmpeg.exe",
+  "blender": "C:\\Tools\\blender\\blender.exe",
+  "timezone": "Europe/Paris"
+}

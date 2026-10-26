@@ -1,0 +1,66 @@
+{
+  "_help": "Blank template of a show. Never edited in place: Claude Code copies this folder to concept/<id>/ during the first run (CLAUDE.md, \"First run\"), then replaces EVERY <...> with the owner's answers. A field that still holds a <...> makes the studio refuse the concept (node --no-warnings core/concept.mjs check <id> lists them). Fields whose name starts with _ are notes, never read by the code.",
+  "id": "<your concept id: lowercase letters, digits and dashes, 3 to 31 characters, the same as the folder name>",
+  "name": "<your show's name, in the videos' language>",
+  "name_fr": "<your show's name as shown to the owner on the vitrine>",
+  "since": "<fill with today's date, YYYY-MM-DD>",
+  "language": "<choose the language of the videos: en is the only one the chain supports today (Kokoro en-us, English captions and trend filter)>",
+  "hero": "<your hero's id: lowercase, e.g. the first name without accents>",
+  "hero_name": "<your hero's first name>",
+  "hero_pronouns": "<choose the hero's pronouns: she, he or they>",
+  "hero_lock": "<describe your hero in one sentence that starts with the first name: adult age, build, hair, the outfit that never changes, shoes; 20 to 300 characters; never the words text, letters or logo>",
+  "palette": "<describe your colour scheme in a few words, e.g. colour scheme of ... with ... light and ... shadows>",
+  "style": "<describe your drawing style: medium, line, faces, colours, background detail, lighting, then always: no text, no letters, no words, no writing, no signs, no watermark>",
+  "voice": {
+    "engine": "kokoro",
+    "id": "<choose a Kokoro voice id installed on this PC, e.g. af_heart, am_puck, bf_emma, bm_george>",
+    "speed": 0.95,
+    "label_fr": "<describe the narrator voice for the owner, in French>"
+  },
+  "image": {
+    "ref_denoise": 0.9,
+    "steps": 9,
+    "seed_base": 9000,
+    "use_sheet": true,
+    "paint_around": true,
+    "blend_denoise": 0.6,
+    "_note": "paint_around true = the hero is pasted from the pose sheets (cast/<hero>/*.png) and only the place is painted around, then the whole still is blended at blend_denoise: the hero stays identical from still to still. false = img2img from the sheet at ref_denoise."
+  },
+  "format": {
+    "hook_prefix": "<write the words every title starts with, e.g. Imagine, or delete the quotes and write null for a free opening>",
+    "hook_regex": null,
+    "person": "<choose who the narration speaks to: second person (you), first person (I), or third person>",
+    "scenes": [8, 12],
+    "scenes_target": "9-11",
+    "words": [90, 140],
+    "words_target": "110-135",
+    "max_words_per_line": 18,
+    "seconds": [45, 60],
+    "twist": "<describe where the twist comes, e.g. second-to-last scene>",
+    "last_scene_question": false,
+    "title_max_chars": 52,
+    "title_ends_with": null,
+    "_note": "scenes / words / seconds: [min, max]; 60 s at most. title_ends_with: a character every title ends with (e.g. \"?\") or null. last_scene_question: true when the last scene asks the viewer a question."
+  },
+  "on_screen": null,
+  "_on_screen_note": "Optional on-screen format of script packages (onScreen block), checked by core/guardrails/playbook.ts. null = only the show-independent rules (no real platform prompt wording, onScreen present once captioned). Otherwise an object: {\"lanes\": {\"<lane id>\": {\"opener\": \"<regex the second-1 caption matches>\", \"chip\": \"<regex a chip by 1.0 s matches, or null>\", \"exclusive\": true, \"hint\": \"<one sentence for the writer>\"}}, \"closer\": \"<caption the close beat shows, or null>\", \"closer_variant_day\": null, \"second1_required\": true}. closer_variant_day: 0 (Sunday) to 6, the weekday on which any closer is accepted.",
+  "prompt": {
+    "framing": {
+      "closeup": "close-up portrait cropped at the chest, head and shoulders filling the frame, the main object of the scene beside the hero, no legs, no feet visible",
+      "waist": "medium shot cropped at the waist, the hero large in frame, the place clearly visible behind the hero, legs and feet out of frame",
+      "full": "full body shot"
+    },
+    "scene1_framing": "closeup",
+    "max_full_body": 2,
+    "hands": "hands relaxed or holding the object of the scene naturally, five fingers, no raised or waving hands",
+    "always": "<write one clause the image model must always respect for the hero (e.g. the colour of the coat), or delete the quotes and write null>",
+    "place_style": "<describe the style of the PLACES only: the style above without any word about a character, face, eyes or mouth, then: no text, no letters, no words, no signs, no watermark>",
+    "place_member_style": "{name} painted in the same style as the place"
+  },
+  "hashtags": {
+    "youtube": ["#Shorts", "<choose a YouTube hashtag for your show, e.g. #Storytime>", "<choose a second one>"],
+    "instagram": ["<choose an Instagram hashtag>", "<choose a second one>", "<choose a third one>"],
+    "tiktok": ["<choose a TikTok hashtag>", "<choose a second one>", "<choose a third one>"]
+  },
+  "yt_tags": ["<list a YouTube keyword for your show>", "<list a second one>"]
+}

@@ -1,0 +1,20 @@
+{
+ "scanned_at": null,
+ "day": {
+  "n": 0,
+  "median": null,
+  "top": null
+ },
+ "week": {
+  "n": 0,
+  "median": null,
+  "top": null
+ },
+ "all": {
+  "n": 0,
+  "median": null,
+  "top": null
+ },
+ "benchmark": null,
+ "at": null
+}

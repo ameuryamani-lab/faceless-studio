@@ -1,0 +1,107 @@
+{
+  "_comment": "Model and effort per agent. Engine: Claude Code on your own Claude subscription. Aliases always point at the latest model of that tier. Opus is not used day to day, to save the subscription quota.",
+  "engine": "claude-code-subscription",
+  "fallback_model": "haiku",
+  "limits": {
+    "max_turns_per_run": 12,
+    "max_runs_per_day": null,
+    "stop_if_rate_limited": true,
+    "plan_brake": {
+      "five_hour_pct": 90,
+      "seven_day_pct": 95
+    },
+    "_comment": "No daily run cap (max_runs_per_day null); the only brake is the real plan usage (data/claude-usage.json): agents wait when the 5-hour session reaches five_hour_pct or the week seven_day_pct, until that window resets."
+  },
+  "agents": {
+    "chief_of_staff": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "outlier_analyst": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "trend_scout": {
+      "model": "haiku",
+      "effort": "medium"
+    },
+    "teardown_analyst": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "strategist": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "calendar_planner": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "topic_editor": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "copywriter": {
+      "model": "sonnet",
+      "effort": "high"
+    },
+    "hook_auditor": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "fact_checker": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "character_keeper": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "voice_writer": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "continuity_checker": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "storyboard_artist": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "image_artist": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "animator": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "voice_director": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "editor": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "qc_inspector": {
+      "model": "sonnet",
+      "effort": "medium",
+      "_comment": "2026-10-24: the last check before publication now looks at the real drawings (view_scene_image); haiku/low dated from when it only reread a numbers report"
+    },
+    "publisher": {
+      "model": "sonnet",
+      "effort": "medium"
+    },
+    "results_analyst": {
+      "model": "haiku",
+      "effort": "low"
+    },
+    "postmortem_writer": {
+      "model": "haiku",
+      "effort": "low"
+    }
+  },
+  "_woken": "2026-10-22: outlier_analyst, teardown_analyst, continuity_checker, postmortem_writer woken in the real chain (Haiku low); they never block publishing."
+}

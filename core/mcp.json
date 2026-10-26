@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "studio": {
+      "type": "stdio",
+      "command": "node",
+      "args": ["--no-warnings", "core/mcp-server.mjs"],
+      "env": {}
+    }
+  }
+}

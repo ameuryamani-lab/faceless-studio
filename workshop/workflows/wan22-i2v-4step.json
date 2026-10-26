@@ -1,0 +1,19 @@
+{
+  "1a": { "class_type": "UNETLoader", "_meta": { "title": "model high noise" }, "inputs": { "unet_name": "wan2.2_i2v_high_noise_14B_fp8_scaled.safetensors", "weight_dtype": "default" } },
+  "1b": { "class_type": "LoraLoaderModelOnly", "_meta": { "title": "lora high noise" }, "inputs": { "model": ["1a", 0], "lora_name": "wan2.2_i2v_lightx2v_4steps_lora_v1_high_noise.safetensors", "strength_model": 1 } },
+  "1c": { "class_type": "ModelSamplingSD3", "_meta": { "title": "shift high noise" }, "inputs": { "model": ["1b", 0], "shift": 5 } },
+  "2a": { "class_type": "UNETLoader", "_meta": { "title": "model low noise" }, "inputs": { "unet_name": "wan2.2_i2v_low_noise_14B_fp8_scaled.safetensors", "weight_dtype": "default" } },
+  "2b": { "class_type": "LoraLoaderModelOnly", "_meta": { "title": "lora low noise" }, "inputs": { "model": ["2a", 0], "lora_name": "wan2.2_i2v_lightx2v_4steps_lora_v1_low_noise.safetensors", "strength_model": 1 } },
+  "2c": { "class_type": "ModelSamplingSD3", "_meta": { "title": "shift low noise" }, "inputs": { "model": ["2b", 0], "shift": 5 } },
+  "3": { "class_type": "CLIPLoader", "_meta": { "title": "text encoder" }, "inputs": { "clip_name": "umt5_xxl_fp8_e4m3fn_scaled.safetensors", "type": "wan", "device": "default" } },
+  "4": { "class_type": "VAELoader", "_meta": { "title": "vae" }, "inputs": { "vae_name": "wan_2.1_vae.safetensors" } },
+  "5": { "class_type": "LoadImage", "_meta": { "title": "start image" }, "inputs": { "image": "UPLOADED_KEYFRAME.png" } },
+  "p": { "class_type": "CLIPTextEncode", "_meta": { "title": "prompt" }, "inputs": { "clip": ["3", 0], "text": "MOTION PROMPT" } },
+  "n": { "class_type": "CLIPTextEncode", "_meta": { "title": "negative" }, "inputs": { "clip": ["3", 0], "text": "" } },
+  "6": { "class_type": "WanImageToVideo", "_meta": { "title": "image to video" }, "inputs": { "positive": ["p", 0], "negative": ["n", 0], "vae": ["4", 0], "start_image": ["5", 0], "width": 720, "height": 1280, "length": 65, "batch_size": 1 } },
+  "7": { "class_type": "KSamplerAdvanced", "_meta": { "title": "sampler high noise" }, "inputs": { "model": ["1c", 0], "positive": ["6", 0], "negative": ["6", 1], "latent_image": ["6", 2], "add_noise": "enable", "noise_seed": 4242, "steps": 4, "cfg": 1, "sampler_name": "euler", "scheduler": "simple", "start_at_step": 0, "end_at_step": 2, "return_with_leftover_noise": "enable" } },
+  "8": { "class_type": "KSamplerAdvanced", "_meta": { "title": "sampler low noise" }, "inputs": { "model": ["2c", 0], "positive": ["6", 0], "negative": ["6", 1], "latent_image": ["7", 0], "add_noise": "disable", "noise_seed": 4242, "steps": 4, "cfg": 1, "sampler_name": "euler", "scheduler": "simple", "start_at_step": 2, "end_at_step": 10000, "return_with_leftover_noise": "disable" } },
+  "9": { "class_type": "VAEDecode", "_meta": { "title": "decode" }, "inputs": { "samples": ["8", 0], "vae": ["4", 0] } },
+  "10": { "class_type": "CreateVideo", "_meta": { "title": "create video" }, "inputs": { "images": ["9", 0], "fps": 16 } },
+  "11": { "class_type": "SaveVideo", "_meta": { "title": "save" }, "inputs": { "video": ["10", 0], "filename_prefix": "faceless/clip", "format": "auto", "codec": "auto" } }
+}

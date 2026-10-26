@@ -1,0 +1,20 @@
+{
+  "concept": "<your concept id, the same as concept.json id>",
+  "hero": "<your hero's id, the same as concept.json hero>",
+  "max_per_scene": 1,
+  "extras_rule": "anonymous extras only as a blurred background group, never named, never in focus",
+  "members": {
+    "<your hero's id, the same as concept.json hero>": {
+      "name": "<your hero's first name>",
+      "role": "hero",
+      "lock": "(= concept.json hero_lock, copied by code, never edited here)",
+      "never_changes": [
+        "<list one thing of the hero's look that never changes, e.g. the hair>",
+        "<list a second one, e.g. the coat and its colour>"
+      ],
+      "sheet": null,
+      "views": []
+    }
+  },
+  "_help": "The hero alone to start. Secondary characters (3 to 7 more, each { name, role, lock: one sentence of 20 to 300 characters starting with the first name, never_changes, sheet: null, views: [] }) are added later by the agent character_keeper (write_cast_file) or during the first run if the owner already has a cast in mind. The hero's pose sheets go in cast/<hero id>/ (closeup-front.png, waist-front.png, full-front.png at least), made with concept/make-cast.mjs."
+}

@@ -1,0 +1,180 @@
+{
+  "_comment": "Daily orchestrator (workshop/daily.mjs). NOT scheduled while \"active\" is false: no Windows task exists; \"switchOn\" holds the commands for the owner to approve. Two phases per video: day (idea -> script -> storyboard -> ONE script approval) and night (render -> QC -> publisher drafts -> ONE video approval). Publishing is core/publish-direct.mjs (autonomy below), never this script.",
+  "active": true,
+  "activated": "AUTONOMOUS: 24/7, no schedule, auto-publish of QC-passed videos at least 60 min apart, until the owner says pause. Tasks: fabrication every 10 min, scripts every 30 min, publication every 10 min, every day.",
+  "continuous": true,
+  "autonomy": {
+    "_comment": "publish: core/publish-direct.mjs sends every QC-passed video through Upload-Post (YouTube, Instagram, TikTok), no approval rows. min_gap_min never below 60. Pause: data/production-paused.json (vitrine button or the owner's 'pause'); 'reprends' removes it.",
+    "publish": true,
+    "_resumed": "A video goes out as soon as it is ready (within the gaps below).",
+    "min_gap_min": 100,
+    "stock_target": 6,
+    "_slowed": "min_gap_min 100: about 15 stories a day, so TikTok (Upload-Post cap 15/24 h) and YouTube keep up. Catch-ups and the promo count inside each network cap (core/publish-direct.mjs holds()).",
+    "two_a_day": {
+      "on": true,
+      "slots": [
+        "13:00",
+        "20:00"
+      ],
+      "window_min": 120,
+      "per_day": 2,
+      "_comment": "2 NEW videos a day, out at the slots below (studio time: core/local-config.mjs TIMEZONE, set by STUDIO_TIMEZONE or config.local.json \"timezone\", else this PC's zone). Videos made before keep going out every min_gap_min until the old stock is empty.",
+      "start_at": "2026-10-23T05:00:00Z",
+      "_start": "New production starts at start_at, ahead of the first slot.",
+      "_volume": "The team decides how many videos a day and when. The results analyst's daily 'SLOTS: …' line rewrites slots and per_day (workshop/story/hours.mjs): 1-8 a day, 1 h apart, the number at most once per 48 h; logged in data/decisions.jsonl.",
+      "_no_higgsfield": "No Higgsfield: made with local stills from the hero model sheet + slow zoom, the narrator voice, captions, full chain; 0 Higgsfield credits (workshop/story/animate.mjs DAY_CREDITS_MAX 0, not called)."
+    }
+  },
+  "productionDays": [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu"
+  ],
+  "renderWindow": {
+    "start": "00:30",
+    "end": "14:30"
+  },
+  "noNewRenderAfter": "14:00",
+  "maxRendersPerWindow": 2,
+  "scriptPhaseAt": {
+    "time": "06:00",
+    "days": [
+      "Sun",
+      "Mon",
+      "Tue",
+      "Wed",
+      "Thu"
+    ],
+    "scriptsPerDay": {
+      "default": 3
+    },
+    "_comment": "2 scripts on Wed and Thu so Fri and Sat (no production) are covered: 1+1+1+2+2 = weeklyTarget."
+  },
+  "quietHours": {
+    "start": "23:30",
+    "end": "07:00",
+    "_comment": "Every day. core/db.mjs createApproval queues approvals in data/approvals-queue.jsonl during these hours; core/approval-waiter.mjs (one-off, detached) releases them at the end time."
+  },
+  "weeklyTarget": 7,
+  "publishSlots": {
+    "_comment": "brand/lanes.md DAILY PICK SLOTS (adopted 2026-10-20): day offsets from the script day, nearer first; the 2nd script of the day takes the next free one. Sun-Tue today; Wed today + Fri; Thu today + Sat; Fri, Sat none. workshop/daily.mjs sets videos.planned_publish_date from it at script time.",
+    "Sun": [
+      0,
+      1,
+      2
+    ],
+    "Mon": [
+      0,
+      1,
+      2
+    ],
+    "Tue": [
+      0,
+      1,
+      2
+    ],
+    "Wed": [
+      0,
+      1,
+      2
+    ],
+    "Thu": [
+      0,
+      1,
+      2
+    ],
+    "Fri": [
+      0,
+      1,
+      2
+    ],
+    "Sat": [
+      0,
+      1,
+      2
+    ]
+  },
+  "proposed_start": {
+    "day": "06:00 Sun-Thu (scriptPhaseAt)",
+    "night": "every 30 min 00:30-14:00 Sun-Thu (renders whenever an approved script waits)"
+  },
+  "require_script_approval": false,
+  "runs": {
+    "_comment": "Share of core/agents-models.json limits.max_runs_per_day (40, unchanged) this orchestrator may use per local day: max_runs_share, or max_runs_share_by_day on 2-script days. needed = room a phase needs before it starts (retries included); a 2nd script the same day reuses that day's research (outlier_analyst, trend_scout, strategist, calendar_planner run once), so it only adds day_extra_script.",
+    "max_runs_share": 38,
+    "max_runs_share_by_day": {},
+    "needed": {
+      "day": 12,
+      "night": 5,
+      "day_extra_script": 7
+    }
+  },
+  "plan_order": [
+    "outlier_analyst",
+    "trend_scout",
+    "strategist",
+    "calendar_planner",
+    "topic_editor"
+  ],
+  "_comment_plan_order": "2026-10-21 (brand/lanes.md v2): research before topic_editor runs once per day run; topic_editor then picks ONE slot per run of it and answers \"{slot} | {lane} | {topic}\"; workshop/daily.mjs creates the video. strategist and calendar_planner run once per day run in REPORT-ONLY mode (2026-10-21): a log_event note + data/daily/<date>-<agent>.md, never a video row; topic_editor stays the only picker and must come last.",
+  "script_order": [
+    "copywriter",
+    "hook_auditor",
+    "fact_checker",
+    "voice_writer",
+    "storyboard_artist"
+  ],
+  "timeouts_min": {
+    "agent_default": 20,
+    "outlier_analyst": 25,
+    "trend_scout": 20,
+    "strategist": 20,
+    "calendar_planner": 10,
+    "topic_editor": 10,
+    "copywriter": 20,
+    "hook_auditor": 15,
+    "fact_checker": 25,
+    "voice_writer": 15,
+    "storyboard_artist": 20,
+    "continuity_checker": 15,
+    "qc_inspector": 10,
+    "publisher": 15,
+    "render": 300
+  },
+  "retries": 1,
+  "preflight": {
+    "min_free_gb": 20,
+    "stale_lock_hours": 6,
+    "comfy_url": "http://127.0.0.1:8188",
+    "comfy_auto_start": true,
+    "comfy_start_wait_s": 180
+  },
+  "render": {
+    "_comment": "Night render: pipeline keyframes -> continuity_checker agent (keyframe gate) -> pipeline clips,overlays,sound,assembly,qc. Method img2img = the ep01 way (Z-Image img2img from per-shot composite guides, then Wan 2.2 at 6 steps).",
+    "method": "img2img",
+    "img2img": {
+      "denoise": [
+        0.5,
+        0.55
+      ],
+      "steps": 9,
+      "seeds_per_shot": 2
+    },
+    "wan_steps": 6,
+    "wan_seconds": 5,
+    "dry_run_clip_minutes": 30,
+    "_comment_dry_run": "dry_run_clip_minutes: simulated Wan clip time in --dry-run only (moves the schedule clock, never sleeps)."
+  },
+  "platforms_required": [
+    "youtube",
+    "instagram",
+    "tiktok"
+  ],
+  "switchOn": {
+    "_comment": "NOT RUN. For the owner to approve, then paste in cmd.exe (not PowerShell: it mangles the \\\" quotes), then set \"active\": true. /IT = only when you are logged on; /RL LIMITED = no highest privileges. schtasks has no working-directory option, hence cmd /c \"cd /d ... && ...\". fabrication repeats every 30 min from 00:30 for 13:30 (last start 14:00): a run with nothing to do exits quietly; while one instance renders, the next start is skipped (task default \"do not start a new instance\" + the per-phase lock). Remove: schtasks /Delete /TN \"<name>\" /F Replace <studio folder> with the folder of this studio; node must be on the PATH.",
+    "scripts": "schtasks /Create /TN \"Faceless Studio - scripts\" /SC WEEKLY /D SUN,MON,TUE,WED,THU /ST 06:00 /TR \"cmd /c \\\"cd /d \\\"<studio folder>\\\" && node --no-warnings workshop\\daily.mjs --phase day\\\"\" /IT /RL LIMITED",
+    "fabrication": "schtasks /Create /TN \"Faceless Studio - fabrication\" /SC WEEKLY /D SUN,MON,TUE,WED,THU /ST 00:30 /RI 30 /DU 13:30 /TR \"cmd /c \\\"cd /d \\\"<studio folder>\\\" && node --no-warnings workshop\\daily.mjs --phase night\\\"\" /IT /RL LIMITED"
+  }
+}

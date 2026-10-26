@@ -1,0 +1,461 @@
+{
+ "units": "metres; three.js coordinates (y up): x, y, z = blender x, z, -y",
+ "teams": [
+  {
+   "id": "research",
+   "label": "Recherche",
+   "row": "back",
+   "color": "#14b8a6",
+   "center": {
+    "x": 2.7,
+    "y": 0.0,
+    "z": -6.6
+   },
+   "spots": [
+    {
+     "x": 2.38,
+     "y": 0.45,
+     "z": -5.72,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 1.93,
+      "y": 0.0,
+      "z": -5.72
+     }
+    },
+    {
+     "x": 2.38,
+     "y": 0.45,
+     "z": -6.6,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 1.93,
+      "y": 0.0,
+      "z": -6.6
+     }
+    },
+    {
+     "x": 2.38,
+     "y": 0.45,
+     "z": -7.48,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 1.93,
+      "y": 0.0,
+      "z": -7.48
+     }
+    }
+   ]
+  },
+  {
+   "id": "strategy",
+   "label": "Stratégie",
+   "row": "back",
+   "color": "#3b82f6",
+   "center": {
+    "x": 5.9,
+    "y": 0.0,
+    "z": -6.6
+   },
+   "spots": [
+    {
+     "x": 5.58,
+     "y": 0.45,
+     "z": -5.72,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 5.13,
+      "y": 0.0,
+      "z": -5.72
+     }
+    },
+    {
+     "x": 5.58,
+     "y": 0.45,
+     "z": -6.6,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 5.13,
+      "y": 0.0,
+      "z": -6.6
+     }
+    },
+    {
+     "x": 5.58,
+     "y": 0.45,
+     "z": -7.48,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 5.13,
+      "y": 0.0,
+      "z": -7.48
+     }
+    }
+   ]
+  },
+  {
+   "id": "writing",
+   "label": "Écriture",
+   "row": "back",
+   "color": "#eab308",
+   "center": {
+    "x": 9.1,
+    "y": 0.0,
+    "z": -6.6
+   },
+   "spots": [
+    {
+     "x": 8.78,
+     "y": 0.45,
+     "z": -5.72,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 8.33,
+      "y": 0.0,
+      "z": -5.72
+     }
+    },
+    {
+     "x": 8.78,
+     "y": 0.45,
+     "z": -6.6,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 8.33,
+      "y": 0.0,
+      "z": -6.6
+     }
+    },
+    {
+     "x": 8.78,
+     "y": 0.45,
+     "z": -7.48,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 8.33,
+      "y": 0.0,
+      "z": -7.48
+     }
+    }
+   ]
+  },
+  {
+   "id": "character",
+   "label": "Personnage",
+   "row": "back",
+   "color": "#ec4899",
+   "center": {
+    "x": 12.3,
+    "y": 0.0,
+    "z": -6.6
+   },
+   "spots": [
+    {
+     "x": 11.98,
+     "y": 0.45,
+     "z": -5.72,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 11.53,
+      "y": 0.0,
+      "z": -5.72
+     }
+    },
+    {
+     "x": 11.98,
+     "y": 0.45,
+     "z": -6.6,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 11.53,
+      "y": 0.0,
+      "z": -6.6
+     }
+    },
+    {
+     "x": 11.98,
+     "y": 0.45,
+     "z": -7.48,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 11.53,
+      "y": 0.0,
+      "z": -7.48
+     }
+    }
+   ]
+  },
+  {
+   "id": "visual",
+   "label": "Image",
+   "row": "front",
+   "color": "#f97316",
+   "center": {
+    "x": 12.3,
+    "y": 0.0,
+    "z": -2.4
+   },
+   "spots": [
+    {
+     "x": 11.98,
+     "y": 0.45,
+     "z": -1.52,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 11.53,
+      "y": 0.0,
+      "z": -1.52
+     }
+    },
+    {
+     "x": 11.98,
+     "y": 0.45,
+     "z": -2.4,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 11.53,
+      "y": 0.0,
+      "z": -2.4
+     }
+    },
+    {
+     "x": 11.98,
+     "y": 0.45,
+     "z": -3.28,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 11.53,
+      "y": 0.0,
+      "z": -3.28
+     }
+    }
+   ]
+  },
+  {
+   "id": "sound_edit",
+   "label": "Son et montage",
+   "row": "front",
+   "color": "#ef4444",
+   "center": {
+    "x": 9.1,
+    "y": 0.0,
+    "z": -2.4
+   },
+   "spots": [
+    {
+     "x": 8.78,
+     "y": 0.45,
+     "z": -1.52,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 8.33,
+      "y": 0.0,
+      "z": -1.52
+     }
+    },
+    {
+     "x": 8.78,
+     "y": 0.45,
+     "z": -2.4,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 8.33,
+      "y": 0.0,
+      "z": -2.4
+     }
+    },
+    {
+     "x": 8.78,
+     "y": 0.45,
+     "z": -3.28,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 8.33,
+      "y": 0.0,
+      "z": -3.28
+     }
+    }
+   ]
+  },
+  {
+   "id": "distribution",
+   "label": "Diffusion",
+   "row": "front",
+   "color": "#22c55e",
+   "center": {
+    "x": 5.9,
+    "y": 0.0,
+    "z": -2.4
+   },
+   "spots": [
+    {
+     "x": 5.58,
+     "y": 0.45,
+     "z": -1.52,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 5.13,
+      "y": 0.0,
+      "z": -1.52
+     }
+    },
+    {
+     "x": 5.58,
+     "y": 0.45,
+     "z": -2.4,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 5.13,
+      "y": 0.0,
+      "z": -2.4
+     }
+    },
+    {
+     "x": 5.58,
+     "y": 0.45,
+     "z": -3.28,
+     "facing_yaw": 1.5708,
+     "stand": {
+      "x": 5.13,
+      "y": 0.0,
+      "z": -3.28
+     }
+    }
+   ]
+  }
+ ],
+ "aisle": [
+  {
+   "x": 7.5,
+   "y": 0.0,
+   "z": -8.3
+  },
+  {
+   "x": 7.5,
+   "y": 0.0,
+   "z": -5.0
+  },
+  {
+   "x": 1.93,
+   "y": 0.0,
+   "z": -5.0
+  },
+  {
+   "x": 5.13,
+   "y": 0.0,
+   "z": -5.0
+  },
+  {
+   "x": 8.33,
+   "y": 0.0,
+   "z": -5.0
+  },
+  {
+   "x": 11.53,
+   "y": 0.0,
+   "z": -5.0
+  },
+  {
+   "x": 14.1,
+   "y": 0.0,
+   "z": -4.5
+  },
+  {
+   "x": 11.53,
+   "y": 0.0,
+   "z": -4.0
+  },
+  {
+   "x": 8.33,
+   "y": 0.0,
+   "z": -4.0
+  },
+  {
+   "x": 5.13,
+   "y": 0.0,
+   "z": -4.0
+  }
+ ],
+ "screens": {
+  "main": "screen_main",
+  "wall_ours": [
+   "wall_ours_1",
+   "wall_ours_2",
+   "wall_ours_3",
+   "wall_ours_4"
+  ],
+  "wall_trends": [
+   "wall_trend_1",
+   "wall_trend_2",
+   "wall_trend_3",
+   "wall_trend_4"
+  ],
+  "monitors": {
+   "research": [
+    "monitor_research_1",
+    "monitor_research_2",
+    "monitor_research_3"
+   ],
+   "strategy": [
+    "monitor_strategy_1",
+    "monitor_strategy_2",
+    "monitor_strategy_3"
+   ],
+   "writing": [
+    "monitor_writing_1",
+    "monitor_writing_2",
+    "monitor_writing_3"
+   ],
+   "character": [
+    "monitor_character_1",
+    "monitor_character_2",
+    "monitor_character_3"
+   ],
+   "visual": [
+    "monitor_visual_1",
+    "monitor_visual_2",
+    "monitor_visual_3"
+   ],
+   "sound_edit": [
+    "monitor_sound_edit_1",
+    "monitor_sound_edit_2",
+    "monitor_sound_edit_3"
+   ],
+   "distribution": [
+    "monitor_distribution_1",
+    "monitor_distribution_2",
+    "monitor_distribution_3"
+   ]
+  }
+ },
+ "robot_model_note": "robot.gltf / lester.gltf face +Z in three.js at yaw 0; facing_yaw is the rotation around Y to apply (radians).",
+ "lester": {
+  "x": 7.5,
+  "y": 0.12,
+  "z": -9.3,
+  "facing_yaw": 0.0
+ },
+ "camera": {
+  "type": "orthographic",
+  "ortho_scale": 19.799999237060547,
+  "position": {
+   "x": 21.19,
+   "y": 14.36,
+   "z": 8.44
+  },
+  "target": {
+   "x": 7.19,
+   "y": 1.36,
+   "z": -5.56
+  }
+ },
+ "material_note": "room mesh: day bake in its base colour map -> THREE.MeshBasicMaterial({ map }), map.colorSpace = SRGBColorSpace; models/room-night.jpg is the evening bake on the same UVs (set flipY = false like the glTF map); screen_main, wall_ours_*, wall_trend_* and monitor_* are live quads (UV 0-1); the LED cove, desk lamps and Lester's ring are lit in both bakes.",
+ "room_size": {
+  "width_x": 15.0,
+  "depth_z": 10.5,
+  "wall_height": 3.4
+ },
+ "version": 6,
+ "color_note": "teams[].color: tint the robot's body and ear_l/ear_r with it, shoulder_l/r and arm_l/r with it darkened 45%; head, visor, eyes, hands and belt unchanged; Lester keeps his violet and gold.",
+ "seat_note": "teams[].spots[]: x, z on the floor plan, y = stool seat top (the robot's hover base rests on it), facing_yaw; stand = the floor point beside the stool on the open west side, on the same x as this pod's aisle waypoint."
+}

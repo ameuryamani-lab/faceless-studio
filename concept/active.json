@@ -1,0 +1,7 @@
+{
+ "id": null,
+ "legacy": null,
+ "since": null,
+ "by": null,
+ "_note": "No active concept yet: the studio makes nothing until its owner creates a show (CLAUDE.md, \"First run\") and activates it with node --no-warnings core/concept.mjs activate <id>."
+}

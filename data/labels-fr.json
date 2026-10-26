@@ -1,0 +1,3 @@
+{
+  "_comment": "French display labels for decisions written in English (English text -> French), used when a decision has no label_fr / rule_fr of its own. Read by office/stats.mjs, display only. Example: \"Pets\": \"Animaux\"."
+}
